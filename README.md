@@ -1,13 +1,13 @@
 Completed
--Tsendee
 -Temka
 
 In process
 -Ikhee
 -Tushku
 -Doji
+-Tsendee
+-Baatra
+-Tsevka
 
 Not started
 -Amraa
--Baatra
--Tsevka

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<head>
+<title>JavaScript Task</title>
+
+<style>
+h1 {font-family:serif; font-size:36px; color:#ff0000; text-align:center}
+h2 {font-family:sans-serif; font-size:24px; color:#000000; text-align:center}
+body {background-color:#FFCC00}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+</style>
+
+<script>
+
+function Countdown()
+{
+  var count=-1;
+  var pause=setInterval(Timer, 500); //This will call the Timer function every half second
+
+  function Timer()// The timer function code is completed by adding conditional statements to display the images
+  {
+    count++;
+    if(count >8)
+    {
+      clearInterval(pause); //This will stop the Interval timer calling the Timer function when the count variable==9
+      return;
+    }  
+   
+ //The conditional statement(s) should be inserted here
+    switch(count)
+    {
+      case 0:
+        document.getElementById("display").src = "Bar0.png"; //change .src image with element id="display"
+        document.getElementById("percent").innerHTML = count * 12.5 +"%"; //show percentage of upload
+        break;
+      case 1:
+        document.getElementById("display").src = "Bar1.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 2:
+        document.getElementById("display").src = "Bar2.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 3:
+        document.getElementById("display").src = "Bar3.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 4:
+        document.getElementById("display").src = "Bar4.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 5:
+        document.getElementById("display").src = "Bar5.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 6:
+        document.getElementById("display").src = "Bar6.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 7:
+        document.getElementById("display").src = "Bar7.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+      case 8:
+        document.getElementById("display").src = "Bar8.png";
+        document.getElementById("percent").innerHTML = count * 12.5 +"%";
+        break;
+    }
+ 
+ 
+  }//Closure of function Timer()
+}//Closure of function Coundown()
+
+
+</script>
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;"> Task 4<br>Programming for the web<br>JavaScript</h1>
+
+<br>
+
+<h1>Upload progress simulation</h1>
+
+
+<span id="timer"></span>
+<p style="text-align:center;">Click the button to start the display</p><br>
+
+<p style="text-align:center;">
+<button type="button" onClick="Countdown()">Upload</button>
+</p>
+<img src="Bar0.png" id="display"  alt="display here" class="center"><h2 id = "percent"></h2>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<head>
+<style>
+
+h1 {font-family:"Times New Roman", Times, serif; font-size:48px; color:#ff0000; text-align:center}
+h2 {font-family:Arial, Helvetica, sans-serif; font-size:24px; color:#000000; text-align:left}
+h3 {font-family:Arial, Helvetica, sans-serif; font-size:42px; color:#FF0000 ; text-align:center}
+input[type="number"] {width:75px; font-size:24px; color:#ff0000; text-align:center}
+</style>
+
+<title>Commission Calculator</title>
+
+</head>
+
+
+   <h1>Art Work Sales<br>
+   Commission Modelling <br>
+   </h1>
+   
+   <h2>Enter Sale price boundaries</h2>
+
+<p><strong>Sale prices below &#163
+
+  <!--Lower Range upper limit input box -->
+  <input id="LowerRange" type="number" value=50> will be charged 5% commission<br><br>
+  
+Sale prices equal to this value and up to  &#163
+    
+ <!--Upper range upper limit input box -->
+  <input id="UpperRange" type="number" value=100> will be charged 10% commission<br><br>
+  Sale prices above this value will be charged 12.5% commission
+  
+</p>
+<p>
+<h2>Enter Artwork Price:</h2>
+
+&#163 <input id="ArtPrice" type="number" value=""> <br><br></strong>
+</p>
+<button type="button" onClick="Calculate()">Display Commission</button>
+<br>
+<h3 id="display"></h2>
+
+<script type="text/javascript">
+
+	//function to run when button is clicked
+	function Calculate(){
+		//declare boundries, price and commission
+		var price = document.getElementById("ArtPrice").value * 1; //make variable integer
+		var lRange = document.getElementById("LowerRange").value * 1;
+		var uRange = document.getElementById("UpperRange").value * 1;
+		var commission = 0;
+		
+		//check which boundry price is in and calculate commission depending on boundry
+		if(price < lRange) commission = price * 0.05;
+		else if(price <= uRange) commission = price * 0.1;
+		else commission = price * 0.125;
+
+		//display commission to the screen
+		document.getElementById("display").innerHTML = "Commission for a sale of £" + price + " will be £" + commission;
+
+	}
+</script>
+</body>
+</html>
